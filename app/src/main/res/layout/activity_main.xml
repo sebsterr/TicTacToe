@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout00"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#1B97A6"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="9dp">
+
+                <TextView
+                    android:id="@+id/p1TV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="Player 1: 0 (X)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="9dp">
+
+                <TextView
+                    android:id="@+id/p2TV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="Player 2: 0 (O)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/turnTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#00E4E4E4"
+                android:gravity="center"
+                android:text="TURN: X"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/buttonReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="RESET"
+                android:onClick="resetBoard"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout00">
+
+        <LinearLayout
+            android:id="@+id/linearLayout0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout00">
+
+            <Button
+                android:id="@+id/button00"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/button01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/button02"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="153dp">
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="201dp">
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/button21"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/button22"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="#D8D8D8"
+                android:hapticFeedbackEnabled="true"
+                android:onClick="boardTap"
+                android:text=" "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textColor="#000000"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
